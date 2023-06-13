@@ -6,5 +6,7 @@ export const HomePage = () => {
     <div className='HomePage'>
         <p>Welcome to DirectoryDice!</p>
     </div>
+
+    
   )
 }
