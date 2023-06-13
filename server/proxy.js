@@ -25,9 +25,9 @@ exports.selectMemberById = async (memberId) => {
     }
 }
 
-exports.selectMemberByName = async (name) => {
+exports.selectMemberByName = async (firstName, lastName) => {
     try { 
-        const [rows] = await pool.execute(SELECT_MEMBER_NAME, [name])
+        const [rows] = await pool.execute(SELECT_MEMBER_NAME, [firstName, lastName])
         return rows
     }
     catch (err) {
