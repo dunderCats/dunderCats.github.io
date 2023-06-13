@@ -5,7 +5,7 @@ exports.pool = mysql
 
         host: 'localhost',
         user: 'root',
-        password: '123',
+        password: '1234',
         database: 'directory_dice'
     })
 .promise()
