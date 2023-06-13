@@ -25,7 +25,25 @@ app.get('/members', cors(corsOptions), async (req, res) => {
     res.send(members);
 })
 
+app.get('/member/:id', cors(corsOptions), async (req, res)=> {
+    const memberId = req.params['id']
+    const member = await proxy.selectMemberById(memberId)
+    res.send(member)
+})
 
+app.get('/member', cors(corsOptions), async (req, res)=> {
+    const firstName = req.query.first_name
+    const lastName = req.query.last_name
+    const member = await proxy.selectMemberByName(firstName, lastName)
+    res.send(member)
+    console.log(member)
+})
+
+app.post('/member', cors(corsOptions), async(req, res) => {
+    const member = req.body
+    const newMember = await proxy.insertMember(member)
+    res.send(newMember)
+ })
 
 
 app.listen(PORT, () => { 
