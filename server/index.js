@@ -36,11 +36,12 @@ app.get('/member', cors(corsOptions), async (req, res)=> {
     const lastName = req.query.last_name
     const member = await proxy.selectMemberByName(firstName, lastName)
     res.send(member)
-    console.log(member)
+    // console.log(member)
 })
 
 app.post('/member', cors(corsOptions), async(req, res) => {
     const member = req.body
+    // console.log(member)
     const newMember = await proxy.insertMember(member)
     res.send(newMember)
  })

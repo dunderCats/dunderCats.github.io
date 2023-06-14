@@ -38,7 +38,8 @@ exports.selectMemberByName = async (firstName, lastName) => {
 exports.insertMember = async (member) => {
     try {
         const [rows] = await pool.execute(INSERT_MEMBER, [member.first_name, member.last_name, member.title, member.prof_pic])
-        return { member_id: rows.insertId, ...member }
+        // console.log(rows)
+        return { memberId: rows.insertId, ...member }
     }
     catch(err) {
         console.log(err)
