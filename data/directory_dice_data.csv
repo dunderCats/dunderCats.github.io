@@ -1,7 +1,22 @@
 member_id,first_name,last_name,title,prof_pic
-1,Dan,Moreira,"academic intern",
-2,Sacoya,Adams,"academic intern",
-3,Tunisia,Artope,"academic intern",
-4,Caridad,Robles,"academic intern",
+1,Dan,Moreira,"academic intern",dan_prof.png
+2,Sacoya,Adams,"academic intern",Sacoya_prof.png
+3,Tunisia,Artope,"academic intern",tunisia_prof.png
+4,Caridad,Robles,"academic intern",caridad_prof.png
 5,Spongebob,Squarepants,"Fry Cook",https://static.wikia.nocookie.net/cartoons/images/e/ed/Profile_-_SpongeBob_SquarePants.png/revision/latest/scale-to-width-down/350?cb=20230305115632
-NULL,patrick,star,NULL,NULL
+6,patrick,star,unemployed,NULL
+7,Sandy,Cheeks,squirrel,https://www.google.com/url?sa=i&url=https%3A%2F%2Fspongebob.fandom.com%2Fwiki%2FSandy_Cheeks&psig=AOvVaw3oT6pWsfhYNm9ttrba0gdB&ust=1686776915942000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMD-reqTwf8CFQAAAAAdAAAAABAD
+8,Ethan,Lee,"academic intern",NULL
+9,Farjana,Akter,"academic intern",NULL
+10,Imane,Allay,"academic intern",NULL
+11,Samira,Boudjemai,"academic intern",NULL
+12,Karina,Velasquez,"academic intern",NULL
+13,Leonard,Mercedes,"academic intern",NULL
+14,Melissa,Schaefer,"academic intern",NULL
+15,Mike,Reid,"academic intern",NULL
+16,Nicole,Portalatin,"academic intern",NULL
+17,Rob,Wadhwani,"academic intern",NULL
+18,Rosie,Gonzalez,"academic intern",NULL
+19,"Valerie ",Perez,"academic intern",NULL
+20,Xani,Gonzalez,"academic intern",NULL
+21,NULL,NULL,"academic intern",NULL
