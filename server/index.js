@@ -14,8 +14,6 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-
-
 app.get('/message', cors(corsOptions), async (req,res) => {
     res.send({message: 'We are the dunder Cats - hoo! '})
 })
