@@ -4,4 +4,7 @@ member_id,first_name,last_name,title,prof_pic
 3,Tunisia,Artope,"academic intern",
 4,Caridad,Robles,"academic intern",
 5,Spongebob,Squarepants,"Fry Cook",https://static.wikia.nocookie.net/cartoons/images/e/ed/Profile_-_SpongeBob_SquarePants.png/revision/latest/scale-to-width-down/350?cb=20230305115632
-NULL,patrick,star,NULL,NULL
+6,patrick,star,NULL,NULL
+7,"Mr. Potato",Head,Doctor,NULL
+13,"Mr. Potato",HEAD,Doctor,NULL
+14,"Mrs. POTATO",HEAD,Doctor,NULL
