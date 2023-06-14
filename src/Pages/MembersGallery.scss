@@ -1,21 +1,34 @@
+.MembersGallery {
+    background: linear-gradient(251.97deg, #2662BC 31.29%, rgba(35, 164, 128, 0.973698) 59.4%, rgba(32, 222, 74, 0.95) 91.94%)
+}
+
+
 .grid {
-    padding: 10%;
-    display: grid;
-    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: 200px 200px 200px 200px;
-    grid-gap: 2.5vh;
-    background: linear-gradient(251.97deg, #2662BC 31.29%, rgba(35, 164, 128, 0.973698) 59.4%, rgba(32, 222, 74, 0.95) 91.94%);
-  }
-   
-  .grid_item {
-    width: 100%vh;
-    height: 100%vh;
-    background: white;
-    border-radius: 40px;
-    
-  }
+  padding: 8%;
+  display: grid;
+  grid-template-columns: repeat(5,1fr); //sames as grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; fr means fraction
+  grid-template-rows: 200px 200px 200px 200px;
+  grid-gap: 2.5vh;
+  background: transparent;
 
-//   h1 {
+}
 
-//   }
+.grid_item {
+
+  background: white;
+  border-radius: 40px;
+
+}
+
+.selectAddSearch {
+  padding: 2%;
+  display: flex;
+  justify-content: right;
+  
+}
+
+#select, #add, #search {
+  margin-right: 1.5vh;
+  border:black;
+  padding: 0.5%
+}

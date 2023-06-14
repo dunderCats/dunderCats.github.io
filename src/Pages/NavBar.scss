@@ -1,0 +1,29 @@
+.NavBar {
+  width: auto;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  background-color: white;
+}
+
+#logo {
+  background: transparent;
+  border: none;
+  justify-content: left;
+}
+
+#logo img {
+  width: 45vh;
+}
+
+.navButton:nth-child(-n + 1) {
+  margin-right: auto;
+}
+
+.navButton {
+  border: 2px solid black;
+  margin-right: 2.5vh;
+  background-color: white;
+  padding: 2px 10px;
+  height: 5vh;
+}

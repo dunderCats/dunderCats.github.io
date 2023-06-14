@@ -1,30 +1,27 @@
 import React from "react";
-import './App.css';
-import { HomePage } from './Pages/HomePage';
-import { NavBar } from './Pages/NavBar';
+import "./App.css";
+import { HomePage } from "./Pages/HomePage";
+import { NavBar } from "./Pages/NavBar";
 import { AboutPage } from "./Pages/AboutPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LoginPage } from './Pages/LoginPage';
+import { LoginPage } from "./Pages/LoginPage";
 import { ContactPage } from "./Pages/ContactPage";
-import { MembersGallery } from "./Pages/MembersGallery"
-
+import { MembersGallery } from "./Pages/MembersGallery";
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
-   
-      <NavBar></NavBar>
-      <Routes>
-      <Route path="/" exact = {true} element ={<HomePage/>}/>
-      <Route path="/about" exact = {true} element ={<AboutPage/>}/>
-      <Route path="/contact" exact = {true} element ={<ContactPage/>}/>
-      <Route path="/login" exact = {true} element ={<LoginPage/>}/>
-      <Route path="/membersgallery" exact = {true} element ={<MembersGallery/>}/>
-      </Routes>
+        <NavBar />
+        <Routes>
+          <Route path="/" exact={true} element={<HomePage />} />
+          <Route path="/about" exact={true} element={<AboutPage />} />
+          <Route path="/contact" exact={true} element={<ContactPage />} />
+          <Route path="/login" exact={true} element={<LoginPage />} />
+          <Route path="/membersgallery" exact={true} element={<MembersGallery />}
+          />
+        </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
