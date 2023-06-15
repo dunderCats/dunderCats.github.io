@@ -24,6 +24,7 @@ export const MembersGallery = () => {
       member_id: 1,
       first_name: "Sacoya",
       photo: <img src={Sacoya} alt="Sacoya" />,
+      quote: "Favorite quote: Life is a journey, live it to the fullest"
     },
     {
       member_id: 2,
@@ -134,8 +135,16 @@ export const MembersGallery = () => {
         {filterMembers.map((member) => (
           //This connects the photos with the div
           <div className="grid_item">
+            <div className="flip-card-inner">  
+            <div className="flip-card-front">  
             {member.photo}
+            </div>
+            <div className="flip-card-back">  
             {member.first_name}
+            <div>{member.quote}</div>
+            </div>
+            </div>
+          
           </div>
         ))}
       </div>
