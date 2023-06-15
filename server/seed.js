@@ -23,7 +23,7 @@ connection.connect((err)=>{
         ('Imane', 'Allay', 'academic intern', '../profilePics/Imane.png'),
         ('Karina', 'Velasquez', 'academic intern', '../profilePics/Karina.png'),
         ('Leonard', 'Mercedes', 'academic intern', '../profilePics/Leo.png'),
-        ('Melissa', 'Schaefer', 'academic intern', '../profilePics/Melissa.png'),
+        ('Melissa', 'Schaefer', 'academic intern', '../profilePics/Mel.png'),
         ('Nicole', 'Portalatin', 'academic intern', '../profilePics/Nicole.png'),
         ('Mike', 'Reid', 'academic intern', '../profilePics/Reid.png'),
         ('Rob', 'Wadhwani', 'academic intern', '../profilePics/Rob.png'),
