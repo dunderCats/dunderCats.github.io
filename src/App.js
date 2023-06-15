@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginPage } from "./Pages/LoginPage";
 import { ContactPage } from "./Pages/ContactPage";
 import { MembersGallery } from "./Pages/MembersGallery";
+// import { TestFileUpload } from "./TestFileUpload";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      {/* <TestFileUpload /> */}
     </div>
   );
 }

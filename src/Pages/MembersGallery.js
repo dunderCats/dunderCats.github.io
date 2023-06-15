@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./MembersGallery.scss";
 import Sacoya from "../profilePhotos/Sacoya.png";
 import Farjana from "../profilePhotos/Farjana.png";
@@ -94,19 +94,16 @@ export const MembersGallery = () => {
       member_id: 15,
       first_name: "Mel",
       photo: <img src={Mel} alt="Mel" />,
-      
     },
     {
       member_id: 16,
       first_name: "Karina",
       photo: <img src={Karina} alt="Karina" />,
-      
     },
     {
       member_id: 17,
       first_name: "Rob",
       photo: <img src={Rob} alt="Rob" />,
-      
     },
   ];
 
@@ -115,6 +112,10 @@ export const MembersGallery = () => {
     const randomMember = members[randomMemberIndex];
     alert(randomMember.first_name);
   };
+  const [searchQuery, setSearchQuery] = useState("");
+  const filterMembers = members.filter((member) =>
+    member.first_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="MembersGallery">
@@ -123,11 +124,19 @@ export const MembersGallery = () => {
           Select
         </button>
         <button id="add">Add</button>
-        <input placeholder="Search a member" />
+        <input
+          placeholder="Search a member"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
       <div className="grid">
-        {members.map((member) => (
-          <div className="grid_item">{member.photo}</div>
+        {filterMembers.map((member) => (
+          //This connects the photos with the div
+          <div className="grid_item">
+            {member.photo}
+            {member.first_name}
+          </div>
         ))}
       </div>
     </div>

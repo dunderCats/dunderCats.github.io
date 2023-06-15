@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 export const NavBar = () => {
   return (
     <div className="NavBar">
-      <button className="navButton" id="logo"><Link to='/'><img src={ DDImage } alt='Logo'/></Link></button>
-      <button className="navButton">Dashboard</button>
+      <button className="navButton" id="logo"><Link to='/'><img src={DDImage} alt='Logo'/></Link></button>
+      <button className="navButton"><Link to='/MembersGallery'>Members Gallery</Link></button>
       <button className="navButton"><Link to='/about'>About</Link></button>
       <button className="navButton"><Link to='/contact'>Contact</Link></button>
       <button className="navButton"><Link to='/login'>Login</Link></button>
