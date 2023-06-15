@@ -1,7 +1,6 @@
 const cors = require('cors')
 const express = require('express')
 const proxy = require('./proxy')
-const expressFileUpload = require('express-fileupload')
 const fileUpload = require('express-fileupload')
 // const { body, check, param, validationResult } = require('express-validator')
 // const middlewareWrapper = require('cors')
