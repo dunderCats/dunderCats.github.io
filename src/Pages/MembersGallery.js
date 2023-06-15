@@ -1,5 +1,6 @@
 import React from "react";
 import "./MembersGallery.scss";
+import { useState } from 'react';
 
 export const MembersGallery = () => {
   const members = [
@@ -29,7 +30,12 @@ export const MembersGallery = () => {
     // console.log({ randomMember, members });
   };
 
-  //member_id,first_name,last_name,title,prof_pic
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filterMembers = members.filter((member) =>
+  member.first_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="MembersGallery">
       <div className="selectAddSearch">
@@ -37,35 +43,22 @@ export const MembersGallery = () => {
           Select
         </button>
         <button id="add">Add</button>
-        <input placeholder="Search a member" />
+        <input 
+        placeholder="Search a member" 
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
       <div className="grid">
-        {members.map((member) => (
-          <div className="grid_item">{member.first_name}</div>
-        ))}
-
-        {/* <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div>
-        <div className="grid_item"></div> */}
+    {filterMembers.map((member) => (
+      <div className="grid_item" key={member.member_id}>
+        {member.first_name}
       </div>
+    ))}
     </div>
-  );
-};
+    </div>
+);
+    };
+
+ 
 
