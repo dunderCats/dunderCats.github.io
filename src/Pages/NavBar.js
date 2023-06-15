@@ -1,6 +1,8 @@
 import React from "react";
 import './NavBar.scss'
 import DDImage from "./DDLogo.png"
+
+
 import { Link } from "react-router-dom";
 
 export const NavBar = () => {
