@@ -13,11 +13,21 @@
 
 }
 
+
 .grid_item {
 
-  background: white;
+  background: transparent;
   border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; // Ensure the div takes the full height of its parent
 
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 40px; // Adjust the value as per your preference
+  }
 }
 
 .selectAddSearch {
