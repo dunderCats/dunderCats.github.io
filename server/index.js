@@ -1,6 +1,8 @@
 const cors = require('cors')
 const express = require('express')
 const proxy = require('./proxy')
+const expressFileUpload = require('express-fileupload')
+const fileUpload = require('express-fileupload')
 // const { body, check, param, validationResult } = require('express-validator')
 // const middlewareWrapper = require('cors')
 
@@ -13,6 +15,7 @@ const corsOptions = { origin: ['http://localhost:3000'], optionsSuccessStatus:20
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(fileUpload())
 
 app.get('/message', cors(corsOptions), async (req,res) => {
     res.send({message: 'We are the dunder Cats - hoo! '})
@@ -39,7 +42,7 @@ app.get('/member', cors(corsOptions), async (req, res)=> {
 
 app.post('/member', cors(corsOptions), async(req, res) => {
     const member = req.body
-    // console.log(member)
+    console.log(member)
     const newMember = await proxy.insertMember(member)
     res.send(newMember)
  })
