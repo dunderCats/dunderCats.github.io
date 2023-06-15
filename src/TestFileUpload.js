@@ -51,37 +51,11 @@ export const TestFileUpload = () => {
     
   }
 
-//   const onSubmit = async (e) => {
-//     e.preventDefault();
-//     // const formData = new FormData();
-//     // console.log(formData)
-//     // formData.set('pic', filePic.current.value)
 
-//     try {
-//       const response = await fetch("/member", {
-//         method: "POST",
-//         body: {
-//           fname: firstName.current.value,
-//           lname: lastName.current.value,
-//           title: title.current.value,
-//           pic: filePic.current.value,
-//         },
-//       });
-
-//       const parsedResponse = await response.json();
-//       if (response.ok) {
-//         alert("File uploaded");
-//       } else {
-//         console.error("Some error occurred");
-//       }
-//     } catch (e) {
-//       console.error(e.message);
-//     }
-//   };
 
   return (
     <div className="test">
-        {/* {data.map(m => <h2>{m.first_name}</h2>)} */}
+        {data.map(m => <img src={m.prof_pic} alt={m.first_name} /> )}
       TestFileUpload
       <form onSubmit={handleFormSubmit}>
         <input type="text" name="fname" ref={refFirstName} placeholder="fname" />

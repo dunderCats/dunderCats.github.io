@@ -1,23 +1,20 @@
 member_id,first_name,last_name,title,prof_pic
-1,Dan,Moreira,"academic intern",dan_prof.png
-2,Sacoya,Adams,"academic intern",Sacoya_prof.png
-3,Tunisia,Artope,"academic intern",tunisia_prof.png
-4,Caridad,Robles,"academic intern",caridad_prof.png
-5,Spongebob,Squarepants,"Fry Cook",https://static.wikia.nocookie.net/cartoons/images/e/ed/Profile_-_SpongeBob_SquarePants.png/revision/latest/scale-to-width-down/350?cb=20230305115632
-6,patrick,star,unemployed,NULL
-7,Sandy,Cheeks,squirrel,https://www.google.com/url?sa=i&url=https%3A%2F%2Fspongebob.fandom.com%2Fwiki%2FSandy_Cheeks&psig=AOvVaw3oT6pWsfhYNm9ttrba0gdB&ust=1686776915942000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMD-reqTwf8CFQAAAAAdAAAAABAD
-8,Ethan,Lee,"academic intern",NULL
-9,Farjana,Akter,"academic intern",NULL
-10,Imane,Allay,"academic intern",NULL
-11,Samira,Boudjemai,"academic intern",NULL
-12,Karina,Velasquez,"academic intern",NULL
-13,Leonard,Mercedes,"academic intern",NULL
-14,Melissa,Schaefer,"academic intern",NULL
-15,Mike,Reid,"academic intern",NULL
-16,Nicole,Portalatin,"academic intern",NULL
-17,Rob,Wadhwani,"academic intern",NULL
-18,Rosie,Gonzalez,"academic intern",NULL
-19,"Valerie ",Perez,"academic intern",NULL
-20,Xani,Gonzalez,"academic intern",NULL
-21,NULL,NULL,"academic intern",NULL
-
+1,Caridad,Robles,"academic intern",../profilePics/caridad_prof.png
+2,Daniel,Moreira,"academic intern",../profilePics/dan_prof.png
+3,Ethan,Lee,"academic intern",../profilePics/ethan_prof.png
+4,Farjana,Akter,"academic intern",../profilePics/farjana_prof.png
+5,Imane,Allay,"academic intern",../profilePics/imane_prof.png
+6,Karina,Velasquez,"academic intern",../profilePics/Karina_prof.png
+7,Leonard,Mercedes,"academic intern",../profilePics/leo_prof.png
+8,Melissa,Schaefer,"academic intern",../profilePics/melissa_prof.png
+9,Nicole,Portalatin,"academic intern",../profilePics/Nicole_prof.png
+10,Mike,Reid,"academic intern",../profilePics/Reid_prof.png
+11,Rob,Wadhwani,"academic intern",../profilePics/rob_prof.png
+12,Rosie,Gonzalez,"academic intern",../profilePics/Rosie_prof.png
+13,Sacoya,Adams,"academic intern",../profilePics/Sacoya_prof.png
+14,Samira,Boudjemai,"academic intern",../profilePics/Samira_prof.png
+15,Tunisia,Artope,"academic intern",../profilePics/tunisia_prof.png
+16,Valerie,Perez,"academic intern",../profilePics/valerie_prof.png
+17,Xani,Gonzalez,"academic intern",../profilePics/Xani_prof.png
+18,SPONGE,BOB,"fry cook",C:\fakepath\spongebob.png
+19,,,,

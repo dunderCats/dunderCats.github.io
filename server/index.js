@@ -1,9 +1,9 @@
 const cors = require('cors')
 const express = require('express')
 const proxy = require('./proxy')
-const expressFileUpload = require('express-fileupload')
+// const expressFileUpload = require('express-fileupload')
 const fileUpload = require('express-fileupload')
-// const { body, check, param, validationResult } = require('express-validator')
+const { body, check, param, validationResult } = require('express-validator')
 // const middlewareWrapper = require('cors')
 
 const PORT = 80
@@ -23,14 +23,20 @@ app.get('/message', cors(corsOptions), async (req,res) => {
 
 app.get('/members', cors(corsOptions), async (req, res) => {
     const members = await proxy.selectMembers(); 
-    res.send(members);
+    members ? res.send(members) : res.status(404).send({message: 'Not Found!'})
 })
 
-app.get('/member/:id', cors(corsOptions), async (req, res)=> {
+
+app.get('/member/:id', cors(corsOptions), param('id').isNumeric(),  async (req, res)=> {
+        const errors = validationResult(req)
+        if (!errors.isEmpty()) {
+            return res.status(400).json({errors:errors.array() })
+        }
     const memberId = req.params['id']
     const member = await proxy.selectMemberById(memberId)
-    res.send(member)
+    member ? res.send(member) : res.status(404).send({message: 'Not found.'})
 })
+
 
 app.get('/member', cors(corsOptions), async (req, res)=> {
     const firstName = req.query.first_name
