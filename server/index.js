@@ -31,7 +31,7 @@ app.get("/members", cors(corsOptions), async (req, res) => {
 app.get(
   "/member/:id",
   cors(corsOptions),
-  param("id").isNumeric(),
+  param("id").isNumericeric(),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
