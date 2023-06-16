@@ -6,6 +6,6 @@ exports.pool = mysql
     user: "root",
     port: 3306,
     password: "5520",
-    database: "sql-primer",
+    database: "directory_dice",
   })
   .promise();
