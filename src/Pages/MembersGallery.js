@@ -1,136 +1,37 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
+import React, { useState, useEffect } from "react";
 import "./MembersGallery.scss";
-import Sacoya from "../profilePhotos/Sacoya.png";
-import Farjana from "../profilePhotos/Farjana.png";
-import Imane from "../profilePhotos/Imane.png";
-import Tunisia from "../profilePhotos/Tunisia.png";
-import Samira from "../profilePhotos/Samira.png";
-import Rosie from "../profilePhotos/Rosie.png";
-import Xani from "../profilePhotos/Xani.png";
-import Ethan from "../profilePhotos/Ethan.png";
-import Leo from "../profilePhotos/Leo.png";
-import Dan from "../profilePhotos/Dan.png";
-import Valerie from "../profilePhotos/Valerie.png";
-import Nicole from "../profilePhotos/Nicole.png";
-import Reid from "../profilePhotos/Reid.png";
-import Caridad from "../profilePhotos/Caridad.png";
-import Mel from "../profilePhotos/Mel.png";
-import Karina from "../profilePhotos/Karina.png";
-import Rob from "../profilePhotos/Rob.png";
+//import { Pictures } from "./Pictures";
 
 export const MembersGallery = () => {
-  const members = [
-    {
-      member_id: 1,
-      first_name: "Sacoya",
-      photo: <img src={Sacoya} alt="Sacoya" />,
-      quote: "Favorite quote: Life is a journey, live it to the fullest"
-    },
-    {
-      member_id: 2,
-      first_name: "Farjana",
-      photo: <img src={Farjana} alt="Farjana" />,
-    },
-    {
-      member_id: 3,
-      first_name: "Imane",
-      photo: <img src={Imane} alt="Imane" />,
-    },
-    {
-      member_id: 4,
-      first_name: "Tunisia",
-      photo: <img src={Tunisia} alt="Tunisia" />,
-    },
-    {
-      member_id: 5,
-      first_name: "Samira",
-      photo: <img src={Samira} alt="Samira" />,
-    },
-    {
-      member_id: 6,
-      first_name: "Rosie",
-      photo: <img src={Rosie} alt="Rosie" />,
-    },
-    {
-      member_id: 7,
-      first_name: "Xani",
-      photo: <img src={Xani} alt="Xani" />,
-    },
-    {
-      member_id: 8,
-      first_name: "Ethan",
-      photo: <img src={Ethan} alt="Ethan" />,
-    },
-    {
-      member_id: 9,
-      first_name: "Leo",
-      photo: <img src={Leo} alt="Leo" />,
-    },
-    {
-      member_id: 10,
-      first_name: "Dan",
-      photo: <img src={Dan} alt="Dan" />,
-    },
-    {
-      member_id: 11,
-      first_name: "Valerie",
-      photo: <img src={Valerie} alt="Valerie" />,
-    },
-    {
-      member_id: 12,
-      first_name: "Nicole",
-      photo: <img src={Nicole} alt="Nicole" />,
-    },
-    {
-      member_id: 13,
-      first_name: "Reid",
-      photo: <img src={Reid} alt="Reid" />,
-    },
-    {
-      member_id: 14,
-      first_name: "Caridad",
-      photo: <img src={Caridad} alt="Caridad" />,
-    },
-    {
-      member_id: 15,
-      first_name: "Mel",
-      photo: <img src={Mel} alt="Mel" />,
-    },
-    {
-      member_id: 16,
-      first_name: "Karina",
-      photo: <img src={Karina} alt="Karina" />,
-    },
-    {
-      member_id: 17,
-      first_name: "Rob",
-      photo: <img src={Rob} alt="Rob" />,
-    },
-  ];
+  const [members, setMembers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedMember, setSelectedMember] = useState(null);
-  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("http://localhost/members")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+
+        //setMembers(data);
+      });
+  }, []);
 
   const selectRandomMember = () => {
     const randomMemberIndex = Math.floor(Math.random() * members.length);
     const randomMember = members[randomMemberIndex];
     alert(`The turn is for ${randomMember.first_name}`)
     ;
-    setSelectedMember(randomMember);
-    //alert(`selected Member: ${randomMember.first_name}`);
-    navigate(`/selected-member/${randomMember.member_id}`);
-  
   };
-  
+
   const filterMembers = members.filter((member) =>
-    member.first_name.toLowerCase().includes(searchQuery.toLowerCase())
+    member.first_name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div className="MembersGallery">
       <div className="selectAddSearch">
-        <button type="button" id="select" onClick={selectRandomMember}>
+        <button id="select" onClick={selectRandomMember}>
           Select
         </button>
         <button id="add">Add</button>
@@ -142,32 +43,104 @@ export const MembersGallery = () => {
       </div>
       <div className="grid">
         {filterMembers.map((member) => (
-          //This connects the photos with the div
-          <div className="grid_item">
-            <div className="flip-card-inner">  
-            <div className="flip-card-front">  
-            {member.photo}
-            </div>
-            <div className="flip-card-back">  
-            {member.first_name}
-            <div>{member.quote}</div>
-            </div>
+          <div className="grid_item" key={member.member_id}>
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                {member.prof_pic && (
+                  <img src={member.prof_pic} alt={member.first_name} />
+                )}
+                {/* <Pictures /> */}
+              </div>
+              <div className="flip-card-back">
+                <div>{member.first_name}</div>
+                <div>{member.quote}</div>
+              </div>
             </div>
           </div>
         ))}
-        </div>
-          {selectedMember && (
-            <div>
-            <h3> Selected Member:</h3>
-            <div className="selected_member">
-            {selectedMember.photo}
-            {selectedMember.first_name}
-            </div>
-            </div>
-          )}
-       
       </div>
-   
+    </div>
   );
+};
 
-          };
+
+
+
+// import React, { useState, useEffect } from "react";
+// import "./MembersGallery.scss";
+// // import Sacoya from "../profilePhotos/Sacoya.png";
+// // import Farjana from "../profilePhotos/Farjana.png";
+// // import Imane from "../profilePhotos/Imane.png";
+// // import Tunisia from "../profilePhotos/Tunisia.png";
+// // import Samira from "../profilePhotos/Samira.png";
+// // import Rosie from "../profilePhotos/Rosie.png";
+// // import Xani from "../profilePhotos/Xani.png";
+// // import Ethan from "../profilePhotos/Ethan.png";
+// // import Leo from "../profilePhotos/Leo.png";
+// // import Dan from "../profilePhotos/Dan.png";
+// // import Valerie from "../profilePhotos/Valerie.png";
+// // import Nicole from "../profilePhotos/Nicole.png";
+// // import Reid from "../profilePhotos/Reid.png";
+// // import Caridad from "../profilePhotos/Caridad.png";
+// // import Mel from "../profilePhotos/Mel.png";
+// // import Karina from "../profilePhotos/Karina.png";
+// // import Rob from "../profilePhotos/Rob.png";
+
+
+// export const MembersGallery = () => {
+//   const [members, setMembers] = useState([]);
+//   const [searchQuery, setSearchQuery] = useState("");
+
+//   useEffect(() => {
+//     fetch("http://localhost/members")
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setMembers(data);
+//       });
+//   }, []);
+
+//   const selectRandomMember = () => {
+//     const randomMemberIndex = Math.floor(Math.random() * members.length);
+//     const randomMember = members[randomMemberIndex];
+//     alert(randomMember.first_name);
+//   };
+
+//   const filterMembers = members.filter((member) =>
+//     member.first_name?.toLowerCase().includes(searchQuery.toLowerCase())
+//   );
+
+//   return (
+//     <div className="MembersGallery">
+//       <div className="selectAddSearch">
+//         <button id="select" onClick={selectRandomMember}>
+//           Select
+//         </button>
+//         <button id="add">Add</button>
+//         <input
+//           placeholder="Search a member"
+//           value={searchQuery}
+//           onChange={(e) => setSearchQuery(e.target.value)}
+//         />
+//       </div>
+//       <div className="grid">
+//         {filterMembers.map((member) => (
+//           <div className="grid_item" key={member.member_id}>
+//             <div className="flip-card-inner">
+//               <div className="flip-card-front">
+//                 {member.prof_pic && (
+//                   <img src={`./Pages/profilePhotos/${member.prof_pic}`} alt={member.first_name} />
+//                 )}
+//               </div>
+//               <div className="flip-card-back">
+//                 <div>{member.first_name}</div>
+//                 <div>{member.quote}</div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+
