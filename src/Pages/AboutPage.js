@@ -1,9 +1,10 @@
 import React from 'react'
+import './AboutPage.scss'
 
 export const AboutPage = () => {
   return (
     
-    <div> 
+    <div className='AboutPage'> 
       <h1>About DirectoryDice</h1>
       <p>Directory Dice is a versatile and user-friendly application designed to simplify the process of creating and managing organization directories or class rosters </p>
       <ul>
