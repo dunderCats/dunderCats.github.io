@@ -1,6 +1,9 @@
 import "./LoginPage.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import LoginButton from '../components/login';
+import LogoutButton from '../components/logout';
+
 
 export const LoginPage = () => {
   const PERSON_KEY = "PersonKey";
@@ -38,8 +41,10 @@ export const LoginPage = () => {
             onChange={handlePassword}
           />
           <button onSubmit={() => handleSubmit()}>
-            <Link to="/">Log in</Link>
+            <Link to="/membersgallery">Log in</Link>
           </button>
+          <LoginButton/>
+          <LogoutButton/>
         </form>
       </div>
     </div>
