@@ -25,20 +25,25 @@ export const LoginPage = () => {
       <h1>Login</h1>
       <div className="form">
         <form onSubmit={handleSubmit}>
+          <label>Username
           <input
             type="text"
-            placeholder="username"
             value={username}
             onChange={handleUsername}
           />
-          <input
+          </label>
+          <div>
+          <label>
+          Password&nbsp;<input
+          //&nbsp;add space inline 
             type="password"
-            placeholder="password"
             value={password}
             onChange={handlePassword}
           />
+          </label>
+          </div>
           <button onSubmit={() => handleSubmit()}>
-            <Link to="/">Log in</Link>
+            <Link to="/membersgallery">Log in</Link>
           </button>
         </form>
       </div>
