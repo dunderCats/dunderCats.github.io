@@ -2,7 +2,13 @@ const cors = require("cors");
 const express = require("express");
 const proxy = require("./proxy");
 const fileUpload = require("express-fileupload");
-const { body, check, param, validationResult } = require("express-validator");
+const {
+  query,
+  body,
+  check,
+  param,
+  validationResult,
+} = require("express-validator");
 // const middlewareWrapper = require('cors')
 
 const PORT = 80;
@@ -19,15 +25,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
 
+// Test message
 app.get("/message", cors(corsOptions), async (req, res) => {
   res.send({ message: "We are the dunder Cats - hoo! " });
 });
 
+// Get all members
 app.get("/members", cors(corsOptions), async (req, res) => {
   const members = await proxy.selectMembers();
+  console.log(members);
   members ? res.send(members) : res.status(404).send({ message: "Not Found!" });
 });
 
+// Get member by id
 app.get(
   "/member/:id",
   cors(corsOptions),
@@ -37,27 +47,54 @@ app.get(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
+
     const memberId = req.params["id"];
     const member = await proxy.selectMemberById(memberId);
     member ? res.send(member) : res.status(404).send({ message: "Not found." });
   }
 );
 
-app.get("/member", cors(corsOptions), async (req, res) => {
-  const firstName = req.query.first_name;
-  const lastName = req.query.last_name;
-  const member = await proxy.selectMemberByName(firstName, lastName);
-  res.send(member);
-  // console.log(member)
-});
+// Get member by first name and last name
+app.get(
+  "/member",
+  cors(corsOptions),
+  query("first_name").isAlpha(),
+  query("last_name").isAlpha(),
+  async (req, res) => {
+    const errors = validationResult(req);
+    // console.log("ERRORS", errors)
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-app.post("/member", cors(corsOptions), async (req, res) => {
+    const firstName = req.query.first_name;
+    const lastName = req.query.last_name;
+    const member = await proxy.selectMemberByName(firstName, lastName);
+    // console.log(member)
+    res.send(member);
+  }
+);
+
+// Post new member to db
+app.post("/member", cors(corsOptions), 
+body("first_name").isAlpha(),
+body("last_name").isAlpha(),
+body("title").isAlpha(),
+body("prof_pic").isURL(),
+async (req, res) => {
+  const errors = validationResult(req);
+  // console.log("err", errors)
+  if(!errors.isEmpty()){
+    return res.status(400).json({ errors: errors.array() })
+  }
+
   const member = req.body;
   console.log(member);
   const newMember = await proxy.insertMember(member);
   res.send(newMember);
 });
 
+// Test upload image from local machine
 // app.post("/upload", cors(corsOptions), async (req, res) => {
 //   let pic;
 //   let uploadPath;
