@@ -21,22 +21,27 @@ export const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login_page">
-      <input
-        type="text"
-        placeholder="username"
-        value={username}
-        onChange={handleUsername}
-      />
-      <input
-        type="password"
-        placeholder="password"
-        value={password}
-        onChange={handlePassword}
-      />
-      <button onSubmit={() => handleSubmit()}>
-        <Link to="/">Log in</Link>
-      </button>
-    </form>
+    <div className="login_page">
+      <h1>Login</h1>
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="username"
+            value={username}
+            onChange={handleUsername}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={handlePassword}
+          />
+          <button onSubmit={() => handleSubmit()}>
+            <Link to="/">Log in</Link>
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
