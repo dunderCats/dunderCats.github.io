@@ -26,4 +26,13 @@
   background-color: white;
   padding: 2px 10px;
   height: 5vh;
+  cursor: pointer;
+  outline: none;
+  cursor: 'pointer';
+  outline: 'none'
+}
+
+.navButton.active {
+  text-decoration: none;
+  background-color: black; 
 }

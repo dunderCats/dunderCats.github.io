@@ -111,7 +111,8 @@ export const MembersGallery = () => {
   const selectRandomMember = () => {
     const randomMemberIndex = [Math.floor(Math.random() * members.length)];
     const randomMember = members[randomMemberIndex];
-    alert(randomMember.first_name);
+    alert(`The turn is for ${randomMember.first_name}`)
+    ;
   };
   const [searchQuery, setSearchQuery] = useState("");
   const filterMembers = members.filter((member) =>
@@ -144,7 +145,6 @@ export const MembersGallery = () => {
             <div>{member.quote}</div>
             </div>
             </div>
-          
           </div>
         ))}
       </div>

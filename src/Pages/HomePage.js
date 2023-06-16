@@ -4,7 +4,7 @@ import './HomePage.scss'
 export const HomePage = () => {
   return (
     <div className='HomePage'>
-        <p>Welcome to DirectoryDice!</p>
+        <h1>Welcome to DirectoryDice!</h1>
     </div>
 
     

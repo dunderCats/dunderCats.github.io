@@ -1,0 +1,21 @@
+.AboutPage {
+    display: flex;
+    align-items: center;
+    width: 100vmax;
+    height: 50vmax;
+    grid-template-rows: 200px 200px 200px 200px;
+    background: linear-gradient(
+      251.97deg,
+      #2662bc 31.29%,
+      rgba(35, 164, 128, 0.973698) 59.4%,
+      rgba(32, 222, 74, 0.95) 91.94%
+    );
+  }
+
+h1 {
+  font-family: "Codystar";
+  font-size: 5.5vh;
+  padding-bottom: 2.5vh;
+}
+
+
