@@ -11,14 +11,17 @@ export const MembersGallery = () => {
     fetch("http://localhost/members")
       .then((response) => response.json())
       .then((data) => {
-        setMembers(data);
+        console.log(data)
+
+        //setMembers(data);
       });
   }, []);
 
   const selectRandomMember = () => {
     const randomMemberIndex = Math.floor(Math.random() * members.length);
     const randomMember = members[randomMemberIndex];
-    alert(randomMember.first_name);
+    alert(`The turn is for ${randomMember.first_name}`)
+    ;
   };
 
   const filterMembers = members.filter((member) =>

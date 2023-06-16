@@ -59,6 +59,27 @@ app.post("/member", cors(corsOptions), async (req, res) => {
   res.send(newMember);
 });
 
+// app.post("/upload", cors(corsOptions), async (req, res) => {
+//   let pic;
+//   let uploadPath;
+
+//   if (!req.files || Object.keys(req.files).length === 0) {
+//     return res.status(400).send("No files were uploaded.");
+//   }
+//   pic = req.files.pic;
+//   // console.log(pic);
+//   uploadPath = __dirname + '/upload/' + pic.name
+
+//   // Use mv() to place file on the server
+//   pic.mv(uploadPath, async function(err){
+//     if(err) return res.status(500).send(err);
+
+//     const newPic = await pool.query("UPDATE members SET prof_pic = ? WHERE member_id = 20", [pic.name])
+
+//     res.send('File uploaded!')
+//   })
+// });
+
 app.listen(PORT, () => {
   console.log(`Express - we are up and running on port: ${PORT}`);
 });

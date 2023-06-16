@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginPage } from "./Pages/LoginPage";
 import { ContactPage } from "./Pages/ContactPage";
 import { MembersGallery } from "./Pages/MembersGallery";
-// import { TestFileUpload } from "./TestFileUpload";
+//import { TestFileUpload } from "./TestFileUpload";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" exact={true} element={<HomePage />} />
-          <Route path="/about" exact={true} element={<AboutPage />} />
+          <Route path="/aboutus" exact={true} element={<AboutPage />} />
           <Route path="/contact" exact={true} element={<ContactPage />} />
           <Route path="/login" exact={true} element={<LoginPage />} />
           <Route path="/membersgallery" exact={true} element={<MembersGallery />}
