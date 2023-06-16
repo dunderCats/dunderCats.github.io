@@ -3,7 +3,6 @@ const express = require("express");
 const proxy = require("./proxy");
 const fileUpload = require("express-fileupload");
 const { body, check, param, validationResult } = require("express-validator");
-const pool = require("./pool").pool;
 // const middlewareWrapper = require('cors')
 
 const PORT = 80;

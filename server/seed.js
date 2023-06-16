@@ -18,7 +18,7 @@ connection.connect((err)=>{
         const insertDataQuery = `INSERT INTO members (first_name, last_name, title, prof_pic)
 
         VALUES ('Caridad', 'Robles', 'academic intern', '../profilePics/caridad_prof.png'),
-        ('Daniel', 'Moreira', 'academic intrn', '../profilePics/dan_prof.png'),
+        ('Daniel', 'Moreira', 'academic intern', '../profilePics/dan_prof.png'),
         ('Ethan', 'Lee', 'academic intern', '../profilePics/ethan_prof.png'),
         ('Farjana', 'Akter', 'academic intern', '../profilePics/farjana_prof.png'),
         ('Imane', 'Allay', 'academic intern', '../profilePics/imane_prof.png'),
