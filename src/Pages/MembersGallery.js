@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./MembersGallery.scss";
 import Sacoya from "../profilePhotos/Sacoya.png";
 import Farjana from "../profilePhotos/Farjana.png";
@@ -107,14 +108,21 @@ export const MembersGallery = () => {
       photo: <img src={Rob} alt="Rob" />,
     },
   ];
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedMember, setSelectedMember] = useState(null);
+  const navigate = useNavigate();
 
   const selectRandomMember = () => {
-    const randomMemberIndex = [Math.floor(Math.random() * members.length)];
+    const randomMemberIndex = Math.floor(Math.random() * members.length);
     const randomMember = members[randomMemberIndex];
     alert(`The turn is for ${randomMember.first_name}`)
     ;
+    setSelectedMember(randomMember);
+    //alert(`selected Member: ${randomMember.first_name}`);
+    navigate(`/selected-member/${randomMember.member_id}`);
+  
   };
-  const [searchQuery, setSearchQuery] = useState("");
+  
   const filterMembers = members.filter((member) =>
     member.first_name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -122,7 +130,7 @@ export const MembersGallery = () => {
   return (
     <div className="MembersGallery">
       <div className="selectAddSearch">
-        <button id="select" onClick={selectRandomMember}>
+        <button type="button" id="select" onClick={selectRandomMember}>
           Select
         </button>
         <button id="add">Add</button>
@@ -147,7 +155,19 @@ export const MembersGallery = () => {
             </div>
           </div>
         ))}
+        </div>
+          {selectedMember && (
+            <div>
+            <h3> Selected Member:</h3>
+            <div className="selected_member">
+            {selectedMember.photo}
+            {selectedMember.first_name}
+            </div>
+            </div>
+          )}
+       
       </div>
-    </div>
+   
   );
-};
+
+          };
