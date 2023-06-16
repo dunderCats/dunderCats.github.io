@@ -115,6 +115,8 @@ export const MembersGallery = () => {
   const selectRandomMember = () => {
     const randomMemberIndex = Math.floor(Math.random() * members.length);
     const randomMember = members[randomMemberIndex];
+    alert(`The turn is for ${randomMember.first_name}`)
+    ;
     setSelectedMember(randomMember);
     //alert(`selected Member: ${randomMember.first_name}`);
     navigate(`/selected-member/${randomMember.member_id}`);
@@ -151,7 +153,6 @@ export const MembersGallery = () => {
             <div>{member.quote}</div>
             </div>
             </div>
-          
           </div>
         ))}
         </div>

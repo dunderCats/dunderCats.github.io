@@ -1,43 +1,57 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import "./LoginPage.scss";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import LoginButton from '../components/login';
+import LogoutButton from '../components/logout';
 
 
-const PERSON_KEY = 'PersonKey'
 export const LoginPage = () => {
+  const PERSON_KEY = "PersonKey";
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+  const handleUsername = (eventChange) => {
+    setUsername(eventChange.target.value);
+    localStorage.setItem(PERSON_KEY, JSON.stringify(username));
+  };
 
-    const handleUsername = (eventChange) => {
-        setUsername(eventChange.target.value)
-        localStorage.setItem(PERSON_KEY, JSON.stringify(username))
-    };
+  const handlePassword = (eventChange) => {
+    setPassword(eventChange.target.value);
+  };
 
-    const handlePassword = (eventChange) => {
-        setPassword(eventChange.target.value)
-    };
-
-    const handleSubmit =(eventChange) => {
-        eventChange.preventDefault();
-    }
-
+  const handleSubmit = (eventChange) => {
+    eventChange.preventDefault();
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-        <input
-        type='text'
-        placeholder='username'
-        value={username}
-        onChange={handleUsername}
-        />
-        <input
-       type='password'
-       placeholder='password'
-       value={password}
-       onChange={handlePassword}
-       />
-       <button onSubmit={()=>handleSubmit()}><Link to='/'>Log in</Link></button>
-    </form>
-  )
-}
-
+    <div className="login_page">
+      <h1>Login</h1>
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <label>Username
+          <input
+            type="text"
+            value={username}
+            onChange={handleUsername}
+          />
+          </label>
+          <div>
+          <label>
+          Password&nbsp;<input
+          //&nbsp;add space inline 
+            type="password"
+            value={password}
+            onChange={handlePassword}
+          />
+          </label>
+          </div>
+          <button onSubmit={() => handleSubmit()}>
+            <Link to="/membersgallery">Log in</Link>
+          </button>
+          <LoginButton/>
+          <LogoutButton/>
+        </form>
+      </div>
+    </div>
+  );
+};
