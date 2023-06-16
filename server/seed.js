@@ -3,7 +3,7 @@ const mysql = require('mysql2')
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'blue',
+    password: '1234',
     database: 'directory_dice'
 })
 
@@ -46,3 +46,26 @@ connection.connect((err)=>{
         connection.end();
     }
 })
+
+
+
+// CREATING SQL TABLE WITH SEED
+
+
+
+//Make sure password for pool is updated to represent your sql server pw: 
+
+
+// First, create table using this script in sql work bench: 
+
+
+// CREATE TABLE members (
+//     member_id int PRIMARY KEY NOT NULL AUTO_INCREMENT UNIQUE,
+//     first_name varchar(255) UNIQUE,
+//     last_name varchar(255) ,
+//     title varchar(255),
+//     prof_pic varchar(255)
+// );
+
+
+// Then, 

@@ -27,7 +27,7 @@ app.get('/members', cors(corsOptions), async (req, res) => {
 })
 
 
-app.get('/member/:id', cors(corsOptions), param('id').isNum(),  async (req, res)=> {
+app.get('/member/:id', cors(corsOptions), param('id').isNumeric(),  async (req, res)=> {
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
             return res.status(400).json({errors:errors.array() })
