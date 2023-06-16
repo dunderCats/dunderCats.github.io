@@ -2,7 +2,7 @@ const cors = require("cors");
 const express = require("express");
 const proxy = require("./proxy");
 const fileUpload = require("express-fileupload");
-const { body, check, param, validationResult } = require("express-validator");
+const { param, validationResult } = require("express-validator");
 // const middlewareWrapper = require('cors')
 
 const PORT = 80;
@@ -25,13 +25,14 @@ app.get("/message", cors(corsOptions), async (req, res) => {
 
 app.get("/members", cors(corsOptions), async (req, res) => {
   const members = await proxy.selectMembers();
+  console.log(members)
   members ? res.send(members) : res.status(404).send({ message: "Not Found!" });
 });
 
 app.get(
   "/member/:id",
   cors(corsOptions),
-  param("id").isNumericeric(),
+  param("id").isNumeric(),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
