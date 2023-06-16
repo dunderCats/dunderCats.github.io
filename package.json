@@ -29,7 +29,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serverStart": "nodemon server/index.js",
-    "seed": "node server/seed.js"
+    "seed": "node server/seed.js",
+    "predeploy": "npm run build", 
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +39,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://dunderCats.github.io/directorydice",
   "browserslist": {
     "production": [
       ">0.2%",
