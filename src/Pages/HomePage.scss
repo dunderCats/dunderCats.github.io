@@ -21,21 +21,36 @@
 }
 
 .HomePage {
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10%;
-  padding-left: 10%;
-  padding-right: 0%;
-  justify-content: right;
-  align-items: center;
-  max-width: 100%;
-  word-wrap: break-word;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-    251.97deg,
-    #2662bc 31.29%,
-    rgba(35, 164, 128, 0.973698) 59.4%,
-    rgba(32, 222, 74, 0.95) 91.94%
-  );
+  padding-top: 0%;
+  padding-left: 3%;
+  padding-right: 10%;
+  // justify-content: right;
+  // align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(251.97deg, #2662BC 31.29%, rgba(35, 164, 128, 0.973698) 59.4%, rgba(32, 222, 74, 0.95) 91.94%);
 }
+
+.container1 > h1{
+  font-size: 6em;
+  color: white;
+}
+
+.container1:hover{
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.container2{
+  margin-right: 5%;
+  padding: 0%, 15%, 15%, 0%;
+}
+
+.homePara{
+  font-size: 20px;
+}
+
+
