@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ContactPage.scss";
 
-
 export const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
