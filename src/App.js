@@ -11,6 +11,7 @@ import { MembersGallery } from "./Pages/MembersGallery";
 
 import { useEffect } from 'react';
 import { gapi } from 'gapi-script';
+import { AddMember } from "./Pages/AddMember";
 
 // import { TestFileUpload } from "./TestFileUpload";
 
@@ -45,8 +46,8 @@ function App() {
           <Route path="/aboutus" exact={true} element={<AboutPage />} />
           <Route path="/contact" exact={true} element={<ContactPage />} />
           <Route path="/login" exact={true} element={<LoginPage />} />
-          <Route path="/membersgallery" exact={true} element={<MembersGallery />}
-          />
+          <Route path="/membersgallery" exact={true} element={<MembersGallery />} />
+          <Route path="/addmember" exact={true} element={<AddMember />} />
         </Routes>
       </BrowserRouter>
       

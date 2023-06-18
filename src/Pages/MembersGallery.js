@@ -1,11 +1,14 @@
-
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./MembersGallery.scss";
 //import { Pictures } from "./Pictures";
 
 export const MembersGallery = () => {
   const [members, setMembers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Used inside addNewMember() function
+  let navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost/members")
@@ -20,14 +23,17 @@ export const MembersGallery = () => {
   const selectRandomMember = () => {
     const randomMemberIndex = Math.floor(Math.random() * members.length);
     const randomMember = members[randomMemberIndex];
-    alert(`The turn is for ${randomMember.first_name}`)
-    ;
+    alert(`The turn is for ${randomMember.first_name}`);
   };
 
   const filterMembers = members.filter((member) =>
     member.first_name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  
+
+  // Used in button to navigate to add new member form (see AddMember component)
+  const addNewMember = () => {
+    navigate("/addmember");
+  };
 
   return (
     <div className="MembersGallery">
@@ -35,7 +41,9 @@ export const MembersGallery = () => {
         <button id="select" onClick={selectRandomMember}>
           Select
         </button>
-        <button id="add">Add</button>
+        <button id="add" onClick={() => addNewMember()}>
+          Add
+        </button>
         <input
           placeholder="Search a member"
           value={searchQuery}
@@ -47,14 +55,21 @@ export const MembersGallery = () => {
           <div className="grid_item" key={member.member_id}>
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                {member.prof_pic && (
-                  <img src={process.env.PUBLIC_URL + member.prof_pic } alt={member.first_name} />
+                {member.prof_pic.length < 50 ? (
+                  <img
+                    src={process.env.PUBLIC_URL + member.prof_pic}
+                    alt={member.first_name}
+                  />
+                ) : (
+                  <img src={member.prof_pic} alt={member.first_name} />
                 )}
                 {/* <Pictures /> */}
               </div>
               <div className="flip-card-back">
-                <div>{member.first_name}</div>
-                <div>{member.quote}</div>
+                <div>
+                  {member.first_name} {member.last_name}
+                </div>
+                <div>{member.title}</div>
               </div>
             </div>
           </div>
@@ -63,9 +78,6 @@ export const MembersGallery = () => {
     </div>
   );
 };
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import "./MembersGallery.scss";
@@ -86,7 +98,6 @@ export const MembersGallery = () => {
 // // import Mel from "../profilePhotos/Mel.png";
 // // import Karina from "../profilePhotos/Karina.png";
 // // import Rob from "../profilePhotos/Rob.png";
-
 
 // export const MembersGallery = () => {
 //   const [members, setMembers] = useState([]);
@@ -143,5 +154,3 @@ export const MembersGallery = () => {
 //     </div>
 //   );
 // };
-
-

@@ -11,14 +11,12 @@ const {
 } = require("express-validator");
 // const middlewareWrapper = require('cors')
 
-
 const PORT = 80;
 const app = express();
 const corsOptions = {
   origin: ["http://localhost:3000"],
   optionsSuccessStatus: 200,
 };
-
 
 // middleware
 app.use(cors());
@@ -77,23 +75,26 @@ app.get(
 );
 
 // Post new member to db
-app.post("/member", cors(corsOptions), 
-body("first_name").isAlpha(),
-body("last_name").isAlpha(),
-body("title").isAlpha(),
-body("prof_pic").isURL(),
-async (req, res) => {
-  const errors = validationResult(req);
-  // console.log("err", errors)
-  if(!errors.isEmpty()){
-    return res.status(400).json({ errors: errors.array() })
-  }
+app.post(
+  "/member",
+  cors(corsOptions),
+  body("first_name").isAlpha(),
+  body("last_name").isAlpha(),
+  body("title"),
+  body("prof_pic"),
+  async (req, res) => {
+    const errors = validationResult(req);
+    // console.log("err", errors);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-  const member = req.body;
-  console.log(member);
-  const newMember = await proxy.insertMember(member);
-  res.send(newMember);
-});
+    const member = req.body;
+    // console.log(member);
+    const newMember = await proxy.insertMember(member);
+    res.send(newMember);
+  }
+);
 
 // Test upload image from local machine
 // app.post("/upload", cors(corsOptions), async (req, res) => {
