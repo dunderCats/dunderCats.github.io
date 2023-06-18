@@ -11,6 +11,7 @@ const {
 } = require("express-validator");
 // const middlewareWrapper = require('cors')
 
+
 const PORT = 80;
 const app = express();
 const corsOptions = {
@@ -18,8 +19,8 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-// middleware
 
+// middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

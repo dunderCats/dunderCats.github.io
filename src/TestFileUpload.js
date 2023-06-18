@@ -13,7 +13,7 @@ export const TestFileUpload = () => {
     fetch("http://localhost/members")
       .then((res) => res.json())
       .then((membersData) => {
-        // console.log("members: ", membersData)
+        console.log("members: ", membersData)
         setData(membersData);
       });
   }, []);
@@ -69,7 +69,7 @@ export const TestFileUpload = () => {
   return (
     <div className="test">
       {data.map((m) => (
-        <img src={m.prof_pic} alt={m.first_name} />
+        <img src={m.prof_pic} alt={m.first_name} key={m.first_name} />
       ))}
       TestFileUpload
       <form encType="multipart/form-data" onSubmit={handleFormSubmit}>
