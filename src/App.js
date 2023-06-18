@@ -12,9 +12,10 @@ import { MembersGallery } from "./Pages/MembersGallery";
 import { useEffect } from 'react';
 import { gapi } from 'gapi-script';
 
+// import { TestFileUpload } from "./TestFileUpload";
+
 const clientId = "104770806637-eu7b9plmra6tugbet2d7a07dk4f02ht6.apps.googleusercontent.com";
 
-// import { TestFileUpload } from "./TestFileUpload";
 
 
 function App() {

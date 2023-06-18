@@ -11,9 +11,9 @@ export const MembersGallery = () => {
     fetch("http://localhost/members")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data)
 
-        //setMembers(data);
+        setMembers(data);
       });
   }, []);
 
@@ -27,6 +27,7 @@ export const MembersGallery = () => {
   const filterMembers = members.filter((member) =>
     member.first_name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  
 
   return (
     <div className="MembersGallery">
@@ -47,7 +48,7 @@ export const MembersGallery = () => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 {member.prof_pic && (
-                  <img src={member.prof_pic} alt={member.first_name} />
+                  <img src={process.env.PUBLIC_URL + member.prof_pic } alt={member.first_name} />
                 )}
                 {/* <Pictures /> */}
               </div>

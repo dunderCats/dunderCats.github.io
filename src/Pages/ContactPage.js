@@ -31,24 +31,26 @@ export const ContactPage = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <p><label>
-          Email:
-          <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
+        <p>
+          <label>
+            Email:
+            <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
         </p>
         <p>
-        <label>
-          Message:
-          <p><textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
-          </p>
-        </label>
+          <label>
+            Message:
+            <p>
+              <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+            </p>
+          </label>
         </p>
         <button type="submit">Send</button>
       </form>
