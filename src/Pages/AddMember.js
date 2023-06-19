@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useNavigate } from 'react-router-dom';
+import "./AddMember.scss";
 
 export const AddMember = () => {
   // Assigns useRef to each input field
@@ -54,23 +55,24 @@ export const AddMember = () => {
   };
 
   return (
-    <div>
+    <div className="AddMember">
       {/* handleFormSubmit() function passed into form tag to handle the form submission */}
-      <form onSubmit={handleFormSubmit}>
+      <div className="addHeading">Add Member</div>
+      <form className="addForm"onSubmit={handleFormSubmit}>
         <input
           type="text"
           name="fname"
           ref={refFirstName}
-          placeholder="first name"
+          placeholder="First name"
         />
         <br />
-        <input type="text" name="lname" ref={refLastName} placeholder="last name" />
+        <input type="text" name="lname" ref={refLastName} placeholder="Last name" />
         <br />
-        <input type="text" name="title" ref={refTitle} placeholder="title" />
+        <input type="text" name="title" ref={refTitle} placeholder="Title" />
         <br />
-        <input type="text" name="pic" ref={refProfPic} placeholder="picture" />
+        <input type="text" name="pic" ref={refProfPic} placeholder="Picture" />
         <br />
-        <input type="submit" value="Submit" />
+        <input className="sendButton" type="submit" value="Submit" />
       </form>
     </div>
   );

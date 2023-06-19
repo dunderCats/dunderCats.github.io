@@ -63,6 +63,7 @@ export const MembersGallery = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
+      <div className="membersHeading">Members Gallery</div>
       <div className="grid">
         {filterMembers.map((member) => (
           <div className="grid_item" key={member.member_id}>

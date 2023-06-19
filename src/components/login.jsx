@@ -1,5 +1,6 @@
 import { GoogleLogin } from 'react-google-login';
 import { Link } from "react-router-dom"; 
+import"./login.scss"
 
 const clientId = "104770806637-eu7b9plmra6tugbet2d7a07dk4f02ht6.apps.googleusercontent.com"; 
 
@@ -19,16 +20,16 @@ function Login() {
 
     return( 
         <div id = "signInButton">
-            <GoogleLogin>
+            <GoogleLogin
             clientId = {clientId}
-            buttonText = "Login Here!"
+            buttonText = {"Log in here!"}
             onSuccess = {onSuccess}
             onFailure = {onFailure}
             cookiePolicy = {'single_host_origin'}
             isSignedIn = {true}
             onSubmit={() => handleSubmit()}
+            />
             <Link to="/membersgallery">Log in</Link>
-            </GoogleLogin>
         </div>
     )
 }
