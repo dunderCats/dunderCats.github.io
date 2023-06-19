@@ -26,12 +26,12 @@ export const MembersGallery = () => {
     alert(`The turn is for ${randomMember.first_name}`);
   };
 
-  const filterMembers = members.filter((member) =>
-    member.first_name?.toLowerCase().includes(searchQuery.toLowerCase())
-    
+  const filterMembers = members.filter(
+    (member) =>
+      member.first_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      member.last_name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  
   // Used in button to navigate to add new member form (see AddMember component)
   const addNewMember = () => {
     navigate("/addmember");
