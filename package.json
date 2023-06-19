@@ -11,6 +11,7 @@
     "express-fileupload": "^1.4.0",
     "express-validator": "^7.0.1",
     "gapi-script": "^1.2.0",
+    "gh-pages": "^5.0.0",
     "mysql2": "^3.3.5",
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
@@ -30,8 +31,8 @@
     "eject": "react-scripts eject",
     "serverStart": "nodemon server/index.js",
     "seed": "node server/seed.js",
-    "predeploy": "npm run build", 
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
