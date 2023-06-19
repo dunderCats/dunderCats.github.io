@@ -28,7 +28,7 @@ export const TestFileUpload = () => {
     })
       .then((res) => res.json())
       .then((newData) => {
-        console.log(newData);
+        // console.log(newData);
       })
       .catch((err) => console.error(err));
   };

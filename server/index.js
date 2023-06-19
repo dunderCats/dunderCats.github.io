@@ -32,7 +32,7 @@ app.get("/message", cors(corsOptions), async (req, res) => {
 // Get all members
 app.get("/members", cors(corsOptions), async (req, res) => {
   const members = await proxy.selectMembers();
-  console.log(members);
+  // console.log(members);
   members ? res.send(members) : res.status(404).send({ message: "Not Found!" });
 });
 
@@ -49,7 +49,7 @@ app.get(
 
     const memberId = req.params["id"];
     const member = await proxy.selectMemberById(memberId);
-    member ? res.send(member) : res.status(404).send({ message: "Not found." });
+    member ? res.send(member) : res.status(404).send({ message: "Member not found." });
   }
 );
 
@@ -69,8 +69,8 @@ app.get(
     const firstName = req.query.first_name;
     const lastName = req.query.last_name;
     const member = await proxy.selectMemberByName(firstName, lastName);
-    // console.log(member)
-    res.send(member);
+    // console.log(member.length)
+    member.length > 0 ? res.send(member) : res.status(404).send({ message: 'Member not found.'});
   }
 );
 
@@ -90,11 +90,18 @@ app.post(
     }
 
     const member = req.body;
-    // console.log(member);
+    // console.log("post: ", member.affectedRows);
     const newMember = await proxy.insertMember(member);
-    res.send(newMember);
+    newMember ? res.status(200).send({ message: "Member added successfully."}) : res.status(400).send({ message: "Unable to add new member."});
   }
 );
+
+app.delete("/member/:id", cors(corsOptions), async (req, res)=>{
+  const memberId = req.params['id']
+  const deleteMember = await proxy.deleteMember(memberId)
+  console.log("s: ", deleteMember)
+  res.send(deleteMember)
+})
 
 // Test upload image from local machine
 // app.post("/upload", cors(corsOptions), async (req, res) => {
