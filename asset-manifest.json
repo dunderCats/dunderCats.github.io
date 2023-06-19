@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dunderCats/static/css/main.b3ba5465.css",
+    "main.js": "/dunderCats/static/js/main.c40667d5.js",
+    "index.html": "/dunderCats/index.html",
+    "main.b3ba5465.css.map": "/dunderCats/static/css/main.b3ba5465.css.map",
+    "main.c40667d5.js.map": "/dunderCats/static/js/main.c40667d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3ba5465.css",
+    "static/js/main.c40667d5.js"
+  ]
+}
