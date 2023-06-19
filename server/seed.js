@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
   host: "127.0.0.1",
   port: "3306",
   user: "root",
-  password: "blue",
+  password: "password",
   database: "directory_dice",
 });
 
@@ -18,23 +18,23 @@ connection.connect((err) => {
 
     const insertDataQuery = `INSERT INTO members (first_name, last_name, title, prof_pic)
 
-        VALUES ('Caridad', 'Robles', 'academic intern', '/profilePics/Caridad.png'),
-        ('Daniel', 'Moreira', 'academic intern', '/profilePics/Dan.png'),
-        ('Ethan', 'Lee', 'academic intern', '/profilePics/Ethan.png'),
-        ('Farjana', 'Akter', 'academic intern', '/profilePics/Farjana.png'),
-        ('Imane', 'Allay', 'academic intern', '/profilePics/Imane.png'),
-        ('Karina', 'Velasquez', 'academic intern', '/profilePics/Karina.png'),
-        ('Leonard', 'Mercedes', 'academic intern', '/profilePics/Leo.png'),
-        ('Melissa', 'Schaefer', 'academic intern', '/profilePics/Mel.png'),
-        ('Nicole', 'Portalatin', 'academic intern', '/profilePics/Nicole.png'),
-        ('Mike', 'Reid', 'academic intern', '/profilePics/Reid.png'),
-        ('Rob', 'Wadhwani', 'academic intern', '/profilePics/Rob.png'),
-        ('Rosie', 'Gonzalez', 'academic intern', '/profilePics/Rosie.png'),
-        ('Sacoya', 'Adams', 'academic intern', '/profilePics/Sacoya.png'),
-        ('Samira', 'Boudjemai', 'academic intern', '/profilePics/Samira.png'),
-        ('Tunisia', 'Artope', 'academic intern', '/profilePics/Tunisia.png'),
-        ('Valerie', 'Perez', 'academic intern', '/profilePics/Valerie.png'),
-        ('Xani', 'Gonzalez', 'academic intern', '/profilePics/Xani.png')`;
+        VALUES ('Caridad', 'Robles', 'Academic Intern', '/profilePics/Caridad.png'),
+        ('Daniel', 'Moreira', 'Academic Intern', '/profilePics/Dan.png'),
+        ('Ethan', 'Lee', 'Academic Intern', '/profilePics/Ethan.png'),
+        ('Farjana', 'Akter', 'Academic Intern', '/profilePics/Farjana.png'),
+        ('Imane', 'Allay', 'Academic Intern', '/profilePics/Imane.png'),
+        ('Karina', 'Velasquez', 'Academic Intern', '/profilePics/Karina.png'),
+        ('Leonard', 'Mercedes', 'Academic Intern', '/profilePics/Leo.png'),
+        ('Melissa', 'Schaefer', 'Academic Intern', '/profilePics/Mel.png'),
+        ('Nicole', 'Portalatin', 'Academic Intern', '/profilePics/Nicole.png'),
+        ('Mike', 'Reid', 'Academic Intern', '/profilePics/Reid.png'),
+        ('Rob', 'Wadhwani', 'Academic Intern', '/profilePics/Rob.png'),
+        ('Rosie', 'Gonzalez', 'Academic Intern', '/profilePics/Rosie.png'),
+        ('Sacoya', 'Adams', 'Academic Intern', '/profilePics/Sacoya.png'),
+        ('Samira', 'Boudjemai', 'Academic Intern', '/profilePics/Samira.png'),
+        ('Tunisia', 'Artope', 'Academic Intern', '/profilePics/Tunisia.png'),
+        ('Valerie', 'Perez', 'Academic Intern', '/profilePics/Valerie.png'),
+        ('Xani', 'Gonzalez', 'Academic Intern', '/profilePics/Xani.png')`;
 
         connection.query(insertDataQuery, (err) => {
         if (err) {
