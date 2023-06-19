@@ -21,7 +21,6 @@
 }
 
 .login_page {
-  display: flex;
   align-items: center;
   width: 100vmax;
   height: 100vh;
@@ -34,3 +33,13 @@
   );
 }
 
+.loginHeading {
+  font-family: "Codystar";
+  color: white;
+  padding: 20vh 0vh 0vh 25vw;
+  font-size: 6.5vh;
+}
+
+.form{
+  padding: 2vh 0vh 0vh 25vw;
+}

@@ -28,8 +28,10 @@ export const MembersGallery = () => {
 
   const filterMembers = members.filter((member) =>
     member.first_name?.toLowerCase().includes(searchQuery.toLowerCase())
+    
   );
 
+  
   // Used in button to navigate to add new member form (see AddMember component)
   const addNewMember = () => {
     navigate("/addmember");
@@ -61,6 +63,7 @@ export const MembersGallery = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
+      <div className="membersHeading">Members Gallery</div>
       <div className="grid">
         {filterMembers.map((member) => (
           <div className="grid_item" key={member.member_id}>

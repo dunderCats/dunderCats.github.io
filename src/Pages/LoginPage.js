@@ -25,7 +25,7 @@ export const LoginPage = () => {
 
   return (
     <div className="login_page">
-      <h1>Login</h1>
+      <h1 className="loginHeading">Login</h1>
       <div className="form">
         <form onSubmit={handleSubmit}>
           <label>Username
@@ -48,8 +48,8 @@ export const LoginPage = () => {
           <button onSubmit={() => handleSubmit()}>
             <Link to="/membersgallery">Log in</Link>
           </button>
-          <LoginButton/>
-          <LogoutButton/>
+          {/* <LoginButton/>
+          <LogoutButton/> */}
         </form>
       </div>
     </div>
