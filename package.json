@@ -39,7 +39,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://dunderCats.github.io/directorydice",
+  "homepage": "https://dunderCats.github.io/dunderCats",
   "browserslist": {
     "production": [
       ">0.2%",
