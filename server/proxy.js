@@ -6,6 +6,7 @@ const SELECT_MEMBER_NAME =
   "SELECT * FROM members WHERE first_name = ? and last_name = ?";
 const INSERT_MEMBER =
   "insert into members (first_name, last_name, title, prof_pic) values (?, ?, ?, ?)";
+const DELETE_MEMBER = 'DELETE FROM members WHERE member_id = ?';
 // const UPDATE_MEMBER_PIC = "UPDATE members SET prof_pic = ? WHERE member_id = ?";
 
 exports.selectMembers = async () => {
@@ -52,6 +53,16 @@ exports.insertMember = async (member) => {
     console.log(err);
   }
 };
+
+exports.deleteMember = async (memberId) =>{
+  try{
+    const [rows] = await pool.execute(DELETE_MEMBER, [memberId])
+    return rows
+  }
+  catch (err){
+    console.log(err)
+  }
+}
 
 // exports.updateMemberPic = async (pic) => {
 //   try {

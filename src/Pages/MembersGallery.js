@@ -37,6 +37,17 @@ export const MembersGallery = () => {
     navigate("/addmember");
   };
 
+  const handleDeleteMember = (deletedMember) => {
+    // console.log("f: ", deletedMember.member_id);
+    fetch(`http://localhost/member/${deletedMember.member_id}`, {
+      method: "DELETE",
+    });
+    const deleteMembers = members.filter(
+      (member) => member.member_id !== deletedMember.member_id
+    );
+    setMembers(deleteMembers);
+  };
+
   return (
     <div className="MembersGallery">
       <div className="selectAddSearch">
@@ -72,6 +83,9 @@ export const MembersGallery = () => {
                   {member.first_name} {member.last_name}
                 </div>
                 <div>{member.title}</div>
+                <button onClick={() => handleDeleteMember(member)}>
+                  Delete
+                </button>
               </div>
             </div>
           </div>
