@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
   host: "127.0.0.1",
   port: "3306",
   user: "root",
-  password: "password",
+  password: "blue",
   database: "directory_dice",
 });
 
@@ -36,12 +36,12 @@ connection.connect((err) => {
         ('Valerie', 'Perez', 'Academic Intern', '/profilePics/Valerie.png'),
         ('Xani', 'Gonzalez', 'Academic Intern', '/profilePics/Xani.png')`;
 
-        connection.query(insertDataQuery, (err) => {
-        if (err) {
-            console.error("Error inserting data:", err);
-        } else {
-            console.log("Data inserted");
-        }
+    connection.query(insertDataQuery, (err) => {
+      if (err) {
+        console.error("Error inserting data:", err);
+      } else {
+        console.log("Data inserted");
+      }
     });
 
     connection.end();
@@ -59,5 +59,5 @@ connection.connect((err) => {
 //     first_name varchar(255) UNIQUE,
 //     last_name varchar(255) ,
 //     title varchar(255),
-//     prof_pic varchar(255)
+//     prof_pic text
 // );
