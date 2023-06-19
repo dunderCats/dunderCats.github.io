@@ -13,6 +13,7 @@ root.render(
   <HashRouter>
   <Routes>
   <Route path = "/" element ={<App />}/>
+  <App/>
   </Routes>
   </HashRouter>
   </React.StrictMode>
