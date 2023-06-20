@@ -3,6 +3,7 @@ DIRECTORY DICE
 
 
 
+[Project Proposal Update.pdf](https://github.com/dunderCats/dunderCats.github.io/files/11803603/Project.Proposal.Update.pdf)
 
 
 
