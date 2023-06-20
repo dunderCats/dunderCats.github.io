@@ -7,6 +7,10 @@ DIRECTORY DICE
 
 
 
+![image](https://github.com/dunderCats/dunderCats.github.io/assets/103558721/ddd5a446-46f4-413f-a238-6af0687a8d7d)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
