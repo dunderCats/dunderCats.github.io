@@ -1,5 +1,7 @@
 DIRECTORY DICE 
 
+https://www.canva.com/design/DAFmBI0jYCo/u6xqcvjBgvYGXGXWZQkRuQ/edit
+
 
 
 
